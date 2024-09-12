@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-origin: padding-box;
+}
+
+body {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.sky {
+    background-image: url(image/360_F_102642850_Mca9lTRDH60DQin39YwCF5Jzd15lcdoo.jpg);
+    background-size: cover;
+    
+    width: 100vw;
+    height: 40vh;
+    position: relative; /* Add this to position clouds relative to the sky */
+    display: flex;
+}
+
+
+
+.cloud-1 {
+    width: 15%;
+    height: 20%;
+    
+    z-index: 5;
+    animation: cloud-1-move 10s linear infinite;
+    
+}
+
+.cloud-2 {
+    width: 20%;
+    height: 25%;
+   
+    z-index: 6;
+    
+    animation: cloud-2-move 20s linear  infinite normal; /* Animation for cloud-2 */
+    &>img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes cloud-1-move {
+    0% {
+        transform: translateX(550%);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+@keyframes cloud-2-move {
+    0% {
+        transform: translateX(450%);
+    }
+    100% {
+        transform: translateX(-200%); /* Move beyond the width of the sky */
+    }
+}
+.road {
+    background-image: url(image/road.png);
+    background-size: cover;
+    height: 400px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 125px;
+    justify-content: center;
+    position: relative; /* Necessary for absolute positioning of cars */
+}
+
+.car-1 {
+    width: 150px;
+    height: 90px;
+    position: absolute; /* Absolute positioning to allow it to move across the road */
+    bottom: 10%; /* Position on the road */
+    left: -150px; /* Start off-screen */
+    animation: car-1-move 10s ease-in-out infinite; /* Infinite animation */
+}
+
+.car-1 img {
+    width: 100%;
+    height: auto;
+}
+
+.car-2 {
+    width: 150px;
+    height: 70px;
+    position: absolute; /* Absolute positioning for movement */
+    bottom: 60%; /* Adjusted vertical position */
+    left: -150px; /* Start off-screen */
+    animation: car-2-move 15s ease-in-out infinite; /* Infinite animation */
+}
+
+.car-2 img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes car-1-move {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(110vw); /* Move across the full viewport width */
+    }
+}
+
+@keyframes car-2-move {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(110vw); /* Move across the full viewport width */
+    }
+}
