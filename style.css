@@ -28,7 +28,7 @@ body {
     height: 20%;
     
     z-index: 5;
-    animation: cloud-1-move 10s linear infinite;
+    animation: cloud-1-move 10s ease-in-out infinite;
     
 }
 
@@ -38,7 +38,7 @@ body {
    
     z-index: 6;
     
-    animation: cloud-2-move 20s linear  infinite normal; /* Animation for cloud-2 */
+    animation: cloud-2-move 20s ease-in-out  infinite normal; /* Animation for cloud-2 */
     &>img{
         width: 100%;
         height: auto;
